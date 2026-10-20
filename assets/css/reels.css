@@ -1,0 +1,108 @@
+/* Instagram reels section + touch/mobile effect parity — loaded last */
+
+/* ================= Reels ================= */
+.reels{background:linear-gradient(180deg,var(--bg) 0%,#f7efe4 100%);overflow:hidden;padding-bottom:90px}
+.rl-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.rl-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.rl-nav{display:flex;gap:10px}
+.btn-ig{background:linear-gradient(120deg,#f58a4b,#a31f24 60%,#2b5a8e);color:#fff;box-shadow:0 14px 30px -12px rgba(163,31,36,.6);background-size:160% 100%;transition:.5s}
+.btn-ig:hover{background-position:100% 0;transform:translateY(-3px)}
+.btn-ig svg.ig{width:20px;height:20px;fill:#fff;stroke:none}
+.btn:hover svg.ig{transform:none}
+
+.rl-track{--pad:max(20px,calc((100vw - 1200px) / 2));display:flex;gap:18px;margin-top:40px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;
+  padding:20px var(--pad) 40px;scroll-padding-inline:var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}
+.rl-track::-webkit-scrollbar{display:none}
+.rl-track.drag{scroll-snap-type:none;cursor:grabbing;user-select:none}
+.rl-card{position:relative;flex:0 0 min(262px,72vw);aspect-ratio:9/16;border-radius:22px;overflow:hidden;scroll-snap-align:start;background:#1a2438;
+  box-shadow:0 22px 44px -22px rgba(20,35,58,.6);display:block;isolation:isolate;color:#fff;-webkit-user-drag:none}
+.rl-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.3s cubic-bezier(.2,.8,.2,1);pointer-events:none;-webkit-user-drag:none}
+.rl-card:hover img,.rl-card.touching img{transform:scale(1.09)}
+.rl-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.32),transparent 30%,transparent 52%,rgba(10,20,36,.88));pointer-events:none}
+.rl-ig{position:absolute;top:14px;left:14px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:6px 12px 6px 9px;border-radius:99px;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);font-size:.72rem;font-weight:600;letter-spacing:.06em}
+.rl-ig svg{width:15px;height:15px;fill:#fff}
+.rl-play{position:absolute;left:50%;top:50%;z-index:3;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,.75);display:grid;place-content:center;transition:.45s cubic-bezier(.2,.8,.2,1)}
+.rl-play::before{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid rgba(255,255,255,.7);animation:ping 2.2s infinite}
+.rl-play svg{width:28px;height:28px;fill:#fff;margin-left:4px}
+.rl-card:hover .rl-play,.rl-card.touching .rl-play{background:var(--crimson);border-color:var(--crimson);transform:scale(1.14)}
+.rl-cap{position:absolute;left:18px;right:18px;bottom:18px;z-index:3}
+.rl-cap b{display:block;font-family:var(--serif);font-weight:600;font-size:1.2rem;line-height:1.25}
+.rl-cap small{display:block;margin-top:4px;opacity:.8;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+.rl-more{background:var(--grad);display:grid;place-content:center;text-align:center;padding:26px}
+.rl-more::after{display:none}
+.rl-more .big{width:76px;height:76px;margin:0 auto 18px;border-radius:50%;display:grid;place-content:center;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.5)}
+.rl-more .big svg{width:36px;height:36px;fill:#fff}
+.rl-more b{font-family:var(--serif);font-size:1.45rem;line-height:1.2;display:block}
+.rl-more small{display:block;margin-top:8px;opacity:.85}
+.rl-hint{display:none;margin-top:-10px;text-align:center;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* modal */
+.rl-modal{position:fixed;inset:0;z-index:300;background:rgba(10,18,32,.92);display:grid;place-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+.rl-modal.open{opacity:1;pointer-events:auto}
+.rl-frame{position:relative;width:min(92vw,390px);height:min(84vh,700px);border-radius:22px;overflow:hidden;background:#000;transform:scale(.92) translateY(20px);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.rl-modal.open .rl-frame{transform:none}
+.rl-frame iframe,.rl-frame video{width:100%;height:100%;border:0;display:block;object-fit:contain;background:#000}
+.rl-x{position:absolute;top:20px;right:20px;width:50px;height:50px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:1.6rem;cursor:pointer;display:grid;place-content:center;transition:.3s}
+.rl-x:hover{background:var(--crimson);transform:scale(1.1)}
+
+/* ================= touch / mobile effect parity ================= */
+.touching .glare,.rl-card.touching .glare{opacity:1}
+.tap{position:fixed;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;border:2px solid var(--crimson);background:rgba(163,31,36,.12);pointer-events:none;z-index:1000;animation:tapR .7s ease-out forwards}
+@keyframes tapR{to{transform:scale(3.4);opacity:0}}
+.btn:active,.sl-arr:active,.tab:active{transform:scale(.95)}
+
+@media (max-width:1000px){
+  /* section dots + back-to-top now shown on mobile too */
+  .dots{display:grid;right:5px;gap:11px}
+  .dots a{width:8px;height:8px;border-width:1.5px}
+  .dots a::before{display:none}
+  .top{display:grid;right:12px;bottom:118px;width:42px;height:42px}
+  /* side slide-ins like desktop (smaller travel) */
+  .rv.l{translate:-38px 0}.rv.r{translate:38px 0}
+  .rv.l.in,.rv.r.in{translate:0 0}
+  /* floating, tilting price card over the hero image */
+  .hero .offer-card{display:block;position:absolute;top:100px;right:14px;left:auto;bottom:auto;width:auto;max-width:176px;margin:0;padding:12px 16px 14px;z-index:7}
+  .hero .offer-card small{font-size:.62rem}
+  .hero .offer-card .price{font-size:1.55rem;margin:2px 0}
+  .hero .offer-card p{display:none}
+  .hero .offer-card .tag{margin-top:6px;padding:4px 10px;font-size:.68rem}
+  .sl-chips{display:none}
+  .sl-p{margin-bottom:20px}
+  .rl-hint{display:block}
+  .rl-nav{display:none}
+}
+@media (max-width:560px){
+  .rl-head{align-items:flex-start}
+  .rl-tools{width:100%}
+}
+/* reduced-motion override removed: animations run on every device */
+
+/* inline video reel */
+.rl-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;background:#1a2438}
+.rl-vid.playing .rl-play{opacity:0;transform:scale(.6)}
+.rl-vid:hover .rl-play{opacity:1;transform:scale(1.14)}
+
+/* reels: smooth scrolling */
+.rl-track{scroll-snap-type:x proximity;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 28px),transparent 100%)}
+.rl-track.gliding,.rl-track.drag{scroll-snap-type:none}
+.rl-card{transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.rl-prog{position:relative;height:4px;margin:-6px 0 0;border-radius:9px;background:rgba(20,35,58,.12);cursor:pointer}
+.rl-prog::before{content:"";position:absolute;left:0;right:0;top:-10px;bottom:-10px}
+.rl-prog i{position:absolute;top:0;bottom:0;left:0;width:30%;border-radius:9px;background:var(--grad);will-change:left}
+.rl-nav .sl-arr{transition:.3s}
+.rl-nav .sl-arr.dis{opacity:.35;pointer-events:none}
+@media (max-width:1000px){.rl-prog{margin-top:-14px}}
+
+/* reels: slides never tilt/scale over each other or over the heading text */
+.reels .rl-head{position:relative;z-index:3}
+.reels .rl-track{position:relative;z-index:1;margin-top:34px}
+.reels .rl-card{transform:none!important;will-change:auto}
+.reels .rl-card .glare{display:none}
+.reels .rl-card.touching img{transform:none}
+@media (max-width:1000px){
+  .reels .rl-head{gap:18px}
+  .reels .rl-tools{margin-bottom:6px}
+  .reels .rl-track{margin-top:26px;padding-top:12px}
+  .reels .rl-cap{left:14px;right:14px;bottom:14px}
+  .reels .rl-cap b{font-size:1.05rem;overflow-wrap:anywhere}
+}

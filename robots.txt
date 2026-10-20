@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /database/
+Disallow: /_old/
+Disallow: /lead.php
+Disallow: /thankyou.html
+
+Sitemap: https://navkarcityofficial.com/sitemap.xml

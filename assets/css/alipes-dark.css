@@ -1,0 +1,253 @@
+body,
+body.boxed-wrapper .page-wrapper {
+  background-color: #282118;
+}
+
+.section-title__title,
+.about-one__points-list-content .text h3,
+.counter-one__count-box h3,
+.floor-plan__tab-content-details li span,
+.news-one__title a,
+.contact-one__person-name,
+.contact-one__points li .content h4 a {
+  color: var(--alipes-white);
+}
+
+.text-black {
+  color: var(--alipes-black) !important;
+}
+
+.about-one__text-2,
+.about-one__points-text,
+.floor-plan__top-text,
+.floor-plan__tab-content-details li p,
+.news-one__meta li a,
+.news-one__button a,
+.news-one__comment a,
+.contact-one__person-sub-title,
+.contact-one__person-text p,
+.contact-one__points li .content p {
+  color: #7a736a;
+}
+
+.counter-one__text {
+  color: #000;
+}
+
+.about-one__points-list-content .icon span {
+  color: #282118;
+}
+
+.about-one__img-box:after {
+  background-color: transparent;
+}
+
+.about-one__big-text {
+  opacity: 0.05;
+}
+
+.about-one__img-two {
+  mix-blend-mode: luminosity;
+  opacity: 0;
+}
+
+.about-one__btn {
+  color: var(--alipes-black);
+  background-color: var(--alipes-white);
+}
+
+.counter-one__single {
+  background-color: #ebded8;
+  border: 1px solid #be5228;
+}
+
+.counter-one__shape {
+  background-image: -moz-linear-gradient(
+    0deg,
+    rgb(26, 21, 14) 0%,
+    rgb(40, 33, 24) 100%
+  );
+  background-image: -webkit-linear-gradient(
+    0deg,
+    rgb(26, 21, 14) 0%,
+    rgb(40, 33, 24) 100%
+  );
+  background-image: -ms-linear-gradient(
+    0deg,
+    rgb(26, 21, 14) 0%,
+    rgb(40, 33, 24) 100%
+  );
+}
+
+.counter-one__bg {
+  opacity: 0.1;
+}
+
+.brand-one {
+  background-color: rgb(40, 33, 24);
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #3e3830;
+}
+
+.brand-one__shape-1,
+.brand-one__shape-2 {
+  opacity: 0.1;
+}
+
+.apartment-one:before {
+  background-color: var(--alipes-black);
+}
+
+.apartment-one__bg {
+  opacity: 0.08;
+}
+
+.floor-plan__main-tab-box .tab-buttons .tab-btn span:before {
+  background-color: #3e3830;
+}
+
+.floor-plan__main-tab-box .tab-buttons .tab-btn.active-btn span {
+  color: var(--alipes-white);
+}
+
+.floor-plan__tab-content-details li {
+  background-color: var(--alipes-black);
+}
+
+.floor-plan__main-tab-box .tabs-content {
+  border: 1px solid #3e3830;
+}
+
+.floor-plan__tab-content-righ {
+  border: 1px solid #3e3830;
+}
+
+.news-one__shape-1 {
+  opacity: 0.1;
+}
+
+.news-one__content {
+  background-color: rgb(34, 28, 19);
+  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.05);
+}
+
+.news-one__meta li:before {
+  background-color: #2c261c;
+}
+
+.news-one__bottom {
+  box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
+}
+
+.contact-one__points li .icon span {
+  background-color: #1a150e;
+}
+
+.google-map {
+  background-color: #1a150e;
+}
+
+/*  */
+
+h3.odometer.odometer-auto-theme {
+  color: #be5228;
+}
+
+.footer-logo {
+  height: 70px;
+  background: #fff;
+  display: inline-block;
+}
+.footer-qr {
+  height: 100px;
+  background: #fff;
+  display: inline-block;
+}
+
+.fix-sidebar {
+  position: fixed;
+  bottom: 25%;
+  right: 5px;
+  z-index: 1001;
+}
+
+.fix-sidebar .call {
+  background: rgb(0 0 0 / 80%);
+  display: block;
+  width: 54px;
+  margin: 5px 0;
+  height: 41px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.fix-sidebar .whatsapp {
+  background: rgb(0 0 0 / 80%);
+  display: inline-block;
+  width: 54px;
+  height: 41px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.fix-callback {
+  position: fixed;
+  bottom: 0;
+  background: #000000;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  border-top: 1px solid #b1a9a9;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.fix-callback a {
+  color: #fff;
+}
+.fix-callback a img {
+  position: relative;
+  top: -3px;
+}
+
+button.btn-close {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+.modal-header {
+  display: block !important;
+}
+
+.modal-logo {
+  text-align: center;
+  height: 65px;
+  margin: 0 auto;
+  display: block;
+}
+
+.modal-title {
+  text-align: center;
+  padding: 12px 0 0;
+  font-family: "Manrope";
+}
+
+.form-control {
+  font-size: 14px;
+  color: #000000;
+  background-color: #f7f7f7;
+  border: 1px solid #ced4da;
+}
+
+.color-icon {
+  filter: brightness(0) saturate(100%) invert(32%) sepia(56%) saturate(1165%)
+    hue-rotate(341deg) brightness(90%) contrast(94%);
+
+  width: 74px;
+  height: 74px;
+}
+
+.text-grey {
+  color: var(--alipes-base) !important;
+}
